@@ -28,7 +28,7 @@ node generate-po-token.ts > po_token_cache.txt
 
 ```sh
 deno install
-deno run --allow-net --allow-env --allow-read generate-po-token.ts
+deno run --allow-net --allow-env --allow-read generate-po-token.ts > po_token_cache.txt
 ```
 
 The resulting `po_token_cache.txt` can be used to get `visitorData` and `poToken` pair to be used with [youtube-local](https://github.com/user234683/youtube-local/pull/219) or another YT related tools (such as `yt-dlp`).
