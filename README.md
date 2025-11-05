@@ -8,7 +8,9 @@ This is just an example from [BgUtils](https://github.com/LuanRt/BgUtils), rippe
 
 Supported runtimes: `['node', 'bun', 'deno']`
 
-### bun
+### New session pot
+
+#### bun
 
 ```sh
 bun install
@@ -17,14 +19,14 @@ bun generate-po-token.ts > po_token_cache.txt
 bun build --target node --outdir ./build
 ```
 
-### node
+#### node
 
 ```sh
 npm install
 node generate-po-token.ts > po_token_cache.txt
 ```
 
-### deno
+#### deno
 
 ```sh
 deno install
@@ -32,6 +34,19 @@ deno run --allow-net --allow-env --allow-read generate-po-token.ts > po_token_ca
 ```
 
 The resulting `po_token_cache.txt` can be used to get `visitorData` and `poToken` pair to be used with [youtube-local](https://github.com/user234683/youtube-local/pull/219) or another YT related tools (such as `yt-dlp`).
+
+### pot bound to `videoId` or a known `visitorData`
+
+To generate one-shot `poToken` for `videoId`, use `generate-po-token-identifier.ts` script.
+
+The script takes one argument: `identifier`, which can be either `videoId` or `visitorData`.
+
+```sh
+video_id="abcdefghijkl"
+node generate-po-token-identifier.ts $video_id
+```
+
+An integration is on the way for my [youtube-local](https://github.com/alive4ever/youtube-local) repository.
 
 ## Acknowledgements
 
