@@ -19,11 +19,20 @@ bun generate-po-token.ts > po_token_cache.txt
 bun build --target node --outdir ./build
 ```
 
-#### node
+#### node >= 22.18.0
 
 ```sh
 npm install
 node generate-po-token.ts > po_token_cache.txt
+```
+
+#### node <22.18.0
+
+```sh
+npm install
+npx --yes tsx generate-po-token.ts > po_token_cache.txt
+# or using npm
+npm exec --yes tsx generate-po-token.ts > po_token_cache.txt
 ```
 
 #### deno
